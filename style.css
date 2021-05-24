@@ -1,0 +1,118 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	line-height: 1.4;
+}
+a {
+	text-decoration: none;
+}
+
+/* Utility Classes */
+.container {
+	max-width: 1280px;
+	margin: auto;
+	padding: 0 0.6rem;
+	overflow: hidden;
+}
+
+/* header */
+#header {
+	background-color: #24292e;
+	color: #fff;
+	font-size: 14px;
+	padding: 1rem 0;
+}
+
+#header a {
+	color: #fff;
+	font-weight: 600;
+	font-size: 14px;
+}
+#header a:hover {
+	color: #bdbfc0;
+}
+#header .logo {
+	/* filter: invert(99%) sepia(2%) saturate(116%) hue-rotate(57deg)
+		brightness(116%) contrast(100%); */
+	width: 35px;
+	height: 35px;
+}
+#header .logo a img {
+	width: 35px;
+	height: 35px;
+	filter: invert(99%) sepia(2%) saturate(116%) hue-rotate(57deg)
+		brightness(116%) contrast(100%);
+
+	/* background-color: #fff; */
+}
+#header .nav_wrapper {
+	display: flex;
+	align-items: center;
+}
+
+#header .nav_wrapper form {
+	position: relative;
+	margin-left: 0.9rem;
+}
+#header .nav_wrapper form #search {
+	width: 272px;
+	border: 1px solid #444d56;
+	background-color: #24292e;
+	color: #fff;
+	height: 30px;
+	padding: 0 0.7rem;
+	border-radius: 5px;
+}
+#header .nav_wrapper form img {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+}
+
+.nav_wrapper nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin-left: 0.5rem;
+}
+
+.nav_wrapper nav .right .link {
+	margin-left: 0.9rem;
+}
+
+.nav_wrapper nav .left {
+	display: flex;
+	align-items: center;
+}
+.nav_wrapper nav .left img {
+	filter: invert(99%) sepia(2%) saturate(116%) hue-rotate(57deg)
+		brightness(116%) contrast(100%);
+	width: 16px;
+	height: 16px;
+	margin-left: 0.9rem;
+}
+.nav_wrapper nav .left img:hover {
+	filter: invert(80%) sepia(7%) saturate(60%) hue-rotate(155deg) brightness(95%)
+		contrast(91%);
+}
+.nav_wrapper nav .left .caret {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	vertical-align: middle;
+	content: '';
+	border-top-style: solid;
+	border-top-width: 4px;
+	border-right: 4px solid transparent;
+	border-bottom: 0 solid transparent;
+	border-left: 4px solid transparent;
+	padding-bottom: 0.4rem;
+}
+
+/* main */

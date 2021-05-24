@@ -1,17 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github profile</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Github profile</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!-- Navigation bar -->
+		<header id="header">
+			<div class="container">
+				<div class="nav_wrapper">
+					<div class="logo">
+						<a href="https://github.com">
+							<img src="./icons/github-logo.svg" alt="github" />
+						</a>
+                        <svg>
+                            
+					</div>
+					<form>
+						<input
+							type="text"
+							name="search"
+							id="search"
+							placeholder="Search or jump to..."
+						/>
+                        <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="">
+					</form>
+					<nav>
+						<div class="right">
+							<a href="https://github.com/pulls" class="link">Pull requests</a>
+							<a href="https://github.com/issues" class="link">Issues</a>
+							<a href="https://github.com/marketplace" class="link">Marketplace</a>
+							<a href="https://github.com/explore" class="link">Explore</a>
+						</div>
+						<div class="left">
+							<div>
+								<img src="./icons/bell.svg" alt="" />
+							</div>
+							<div>
+								<img src="./icons/plus.svg" alt="" />
+                                <span class="caret"></span>
+							</div>
+							<div class="user_Avatar">
+								<img src="" alt="avatar" />
+								<span class="caret"></span>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="container">
+				<div class="tab">
+					<img src="./icons/book.svg" alt="" />
+					Repositories
+				</div>
+				<div class="profile_wrapper">
+					<div id="profile_details"></div>
+					<div id="respositories"></div>
+				</div>
+			</div>
+		</main>
 
-    <script src="UI.js"></script>
-    <script src="getUser.js"></script>
-    <script src="app.js"></script>
-</body>
+		<script src="UI.js"></script>
+		<script src="getUser.js"></script>
+		<script src="app.js"></script>
+	</body>
 </html>
