@@ -8,8 +8,6 @@ const searchInput = document.querySelector('.form')
 const navLinks = document.querySelector('.right')
 const main = document.querySelector('main')
 
-
-
 let userInput = 'kehindecodes';
 
 
@@ -72,12 +70,12 @@ const getUser = async (user) => {
 		headers: {
 			'Content-Type': 'application/json',
 			'Content-Length': data.length,
-			Authorization: ' Bearer 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',
+			"Authorization": "Bearer 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 ",
 		},
 	});
 	const output = await response.json();
 
- 
+ console.log(output)
   if (output.data.user === null) {
       main.innerHTML=`
         <div class="errorMessage">
@@ -98,7 +96,7 @@ const getUser = async (user) => {
 };
 
 // display user when the page loads 
-window.onload=  getUser(userInput);
+window.onload =  getUser(userInput);
 
 // get users details when the enter key is pressed
 searchGithub.addEventListener('keyup',(e) =>{
