@@ -1,21 +1,21 @@
 // Variables
 const profile = document.querySelector('#profile_details');
 const repositories = document.querySelector('#respositories');
-
 const num_of_repo = document.querySelector('.number_of_repo')
-
 const searchGithub = document.querySelector('#search')
+const menuBtn = document.querySelector('.menuBtn');
+const searchInput = document.querySelector('form')
+const navLinks = document.querySelector('.right')
+const main = document.querySelector('main')
 
-let userInput = 'kehindecodes'
-// search github when tap enter
-searchGithub.addEventListener('change',(e)=>{
-  e.preventDefault()
-  userInput = e.target.value
- getUser()
-console.log(userInput)
-})
 
-const getUser = async () => {
+let userInput = 'kehindecodes';
+
+
+
+// search github when the enter key is pressed
+
+const getUser = async (user) => {
 	const data = JSON.stringify({
 		query : `
      query GithubUserProfile($userName:String!){
@@ -57,12 +57,13 @@ const getUser = async () => {
        
          `,
          variables :{
-          "userName":userInput
+          "userName":user
        },
          
 	});
 
  
+  // fetch data from API
  
 	const response = await fetch('https://api.github.com/graphql', {
 		method: 'POST',
@@ -74,20 +75,48 @@ const getUser = async () => {
 		},
 	});
 	const output = await response.json();
-
-	ShowRepo(output.data.user.repositories.edges);
+  
+  if (output.data.user === null) {
+      main.innerHTML=`
+        <div class="errorMessage">
+        <div class="container">
+        <h1>User not found</h1>
+        <h3> Check your spellings again</h3>
+        </div>
+        </div>
+      `
+      
+  }else{
+    ShowRepo(output.data.user.repositories.edges);
+    showProfile(output.data.user);
+  }
+ 
 	console.log(output.data.user.avatarUrl);
 	console.log(output.data.user.name);
-	console.log(output.data.user.repositories.totalCount);
-	showProfile(output.data.user);
+	console.log(output.data);
+	
 	console.log(num_of_repo);
 
   num_of_repo.innerHTML= ` Repositories <span class=" repo_number" >
    ${output.data.user.repositories.totalCount}</span>`
 };
 
-getUser();
+// display user when the page loads 
+window.onload = getUser(userInput);
 
+// get users details when the enter key is pressed
+searchGithub.addEventListener('keyup',(e) =>{
+const userInput = e.target.value
+  if (e.key === 'Enter') {
+     getUser(userInput)
+   console.log(userInput)
+  }
+  
+})
+
+
+
+// display list of repository
 function ShowRepo(userRepo) {
 	let repos = '';
 	userRepo.forEach((repo) => {
@@ -124,20 +153,63 @@ function showProfile(userInfo) {
 	profile.innerHTML = `
       <div class="avatar_wrapper">
       <img src=${userInfo.avatarUrl}" alt=${userInfo.name} class="avatar"/>
-   
-   </div>
-<div class="bio">
-<p class="name">
+      <p class="name">
 ${userInfo.name}
-</p>
 <span class="login">
  ${userInfo.login}
 </span>
+</p>
+
+   
+   </div>
+<div class="bio">
 <p class="title">${userInfo.bio}</p>
+
 </div>
+
       `;
       document.querySelector('.user_Avatar').innerHTML=`
       <img src=${userInfo.avatarUrl}" alt=${userInfo.name} class="user_img"/>
       <span class="caret"></span>
       `
 }
+
+// show error message
+// const userNotFound = ()=>{
+//  repositories.innerHTML =`
+//   <h3>User not found</h3>
+//   `
+//   profile.innerHTML=
+
+// }
+
+// show nav links when the hamburger menu is clicked
+
+menuBtn.addEventListener('click', (e) =>{
+  e.preventDefault();
+  menuBtn.classList.toggle('active');
+ 
+  if(menuBtn.classList.contains('active')){
+      navLinks.classList.add('active');
+      searchInput.classList.add('active');
+  }else{
+      navLinks.classList.remove('active');
+      searchInput.classList.remove('active');
+  }
+
+})
+// show loader 
+
+document.onreadystatechange = function() {
+  if (document.readyState !== "complete") {
+      document.querySelector(
+        "body").style.visibility = "hidden";
+      document.querySelector(
+        "#loader").style.visibility = "visible";
+  } else {
+      document.querySelector(
+        "#loader").style.display = "none";
+      document.querySelector(
+        "body").style.visibility = "visible";
+  }
+};

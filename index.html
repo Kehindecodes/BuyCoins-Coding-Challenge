@@ -12,22 +12,32 @@
 		<header id="header">
 			<div class="container">
 				<div class="nav_wrapper">
+					<!-- hamburger menu -->
+				
+					
 					<div class="logo">
 						<a href="https://github.com">
 							<img src="./icons/github-logo.svg" alt="github" />
 						</a>
-                        <svg>
+
+                        <a href="#" class="menuBtn" >
+							<span class="lines"></span>
+						  </a>
                             
 					</div>
-					<form>
+					<div >
+						
+					</div>
+					<div class="form">
 						<input
 							type="text"
 							name="search"
 							id="search"
 							placeholder="Search or jump to..."
+							autocomplete="off"
 						/>
                         <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="">
-					</form>
+					</div>
 					<nav>
 						<div class="right">
 							<a href="https://github.com/pulls" class="link">Pull requests</a>
@@ -36,14 +46,14 @@
 							<a href="https://github.com/explore" class="link">Explore</a>
 						</div>
 						<div class="left">
-							<div>
-								<img src="./icons/bell.svg" alt=""class="icon"/>
+							<div class="bell">
+								<img src="./icons/bell.svg" alt=""class="icon "/>
 							</div>
-							<div>
+							<div class="carets">
 								<img src="./icons/plus.svg" alt="" class="icon" />
                                 <span class="caret"></span>
 							</div>
-							<div class="user_Avatar">
+							<div class="user_Avatar carets">
 							
 								
 							</div>
@@ -52,7 +62,7 @@
 				</div>
 			</div>
 		</header>
-		<main>
+		<main id="main">
 			<div class="tab_wrapper">
 				<div class="tab">
 					<img src="./icons/book.svg" alt="" />
@@ -70,9 +80,7 @@
 					</div>
 					
 					<div id="respositories">
-						<form>
-							<input type="text" name="" id="" placeholder="Find a repository..." class="find_repo">
-						</form>
+					
 						
 					</div>
 				</div>
@@ -80,8 +88,39 @@
 		</section>
 		
 		</main>
-
+		<div id="loader" class="center"></div>
 		<footer id="footer">
+			<div class="container">
+				<div class="footer_wrapper">
+					<div class="copyright">
+						<p>© 2021 GitHub, Inc.</p>
+					</div>
+					<div class="links_1">
+						<a href="https://docs.github.com/en/github/site-policy/github-terms-of-service">Terms</a>
+						<a href="https://docs.github.com/en/github/site-policy/github-privacy-statement">Privacy</a>
+						<a href="https://github.com/security">Security</a>
+						<a href="https://www.githubstatus.com/">Status</a>
+						<a href="https://docs.github.com/">Docs</a>
+					</div>
+					<div class="logo">
+						<a href="https://github.com">
+							<img src="./icons/github-logo.svg" alt="github" />
+						</a>
+					
+					</div>
+					<div class="links_2">
+						<a href="https://support.github.com/">Contact Github</a>
+						<a href="https://github.com/pricing">Pricing</a>
+						<a href="https://docs.github.com/">API</a>
+						<a href="https://services.github.com/">Training</a>
+						<a href="https://github.blog/">
+							Blog
+						</a>
+						<a href="https://github.com/about">About</a>
+					</div>
+				</div>
+			</div>
+		
         
 		</footer>
 		<script src="UI.js"></script>
