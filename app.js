@@ -1,3 +1,4 @@
+
 // Variables
 const profile = document.querySelector('#profile_details');
 const repositories = document.querySelector('#respositories');
@@ -62,6 +63,7 @@ const getUser = async (user) => {
 	});
 
  
+  console.log(apiKey.token)
   // fetch data from API
  
 	const response = await fetch('https://api.github.com/graphql', {
@@ -70,7 +72,7 @@ const getUser = async (user) => {
 		headers: {
 			'Content-Type': 'application/json',
 			'Content-Length': data.length,
-			"Authorization": "Bearer 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 ",
+			"Authorization": `Bearer ${apiKey.token}`,
 		},
 	});
 	const output = await response.json();
