@@ -235,8 +235,6 @@ section .profile_wrapper .bio .title {
 	margin-top: 1rem;
 }
 /* repositories */
-#repositories {
-}
 
 #respositories .repo {
 	border-bottom: 1px solid #ebedef;
@@ -307,29 +305,6 @@ section .profile_wrapper .bio .title {
 }
 
 /* LOADER */
-#loader {
-	border: 12px solid #f3f3f3;
-	border-radius: 50%;
-	border-top: 12px solid #444444;
-	width: 70px;
-	height: 70px;
-	animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
-.center {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
-}
 
 /* footer */
 #footer .footer_wrapper {
@@ -390,13 +365,6 @@ section .profile_wrapper .bio .title {
 		right: 1rem;
 	}
 
-	/* #header {
-		padding-top: 1.5rem;
-		text-align: center;
-	} */
-	/* #header .nav_wrapper {
-		margin-top: 1rem;
-	} */
 	#header .logo {
 		width: 32px;
 		height: 32px;
@@ -510,6 +478,9 @@ section .profile_wrapper .bio .title {
 		width: 100%;
 		margin-top: 1rem;
 		margin-left: 0;
+	}
+	#header .nav_wrapper .form #search {
+		width: 100%;
 	}
 	#header .nav_wrapper .form #search:focus {
 		width: 100%;

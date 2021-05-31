@@ -4,9 +4,10 @@ const repositories = document.querySelector('#respositories');
 const num_of_repo = document.querySelector('.number_of_repo')
 const searchGithub = document.querySelector('#search')
 const menuBtn = document.querySelector('.menuBtn');
-const searchInput = document.querySelector('form')
+const searchInput = document.querySelector('.form')
 const navLinks = document.querySelector('.right')
 const main = document.querySelector('main')
+
 
 
 let userInput = 'kehindecodes';
@@ -75,7 +76,8 @@ const getUser = async (user) => {
 		},
 	});
 	const output = await response.json();
-  
+
+ 
   if (output.data.user === null) {
       main.innerHTML=`
         <div class="errorMessage">
@@ -90,19 +92,13 @@ const getUser = async (user) => {
     ShowRepo(output.data.user.repositories.edges);
     showProfile(output.data.user);
   }
- 
-	console.log(output.data.user.avatarUrl);
-	console.log(output.data.user.name);
-	console.log(output.data);
-	
-	console.log(num_of_repo);
 
   num_of_repo.innerHTML= ` Repositories <span class=" repo_number" >
    ${output.data.user.repositories.totalCount}</span>`
 };
 
 // display user when the page loads 
-window.onload = getUser(userInput);
+window.onload=  getUser(userInput);
 
 // get users details when the enter key is pressed
 searchGithub.addEventListener('keyup',(e) =>{
@@ -174,15 +170,6 @@ ${userInfo.name}
       `
 }
 
-// show error message
-// const userNotFound = ()=>{
-//  repositories.innerHTML =`
-//   <h3>User not found</h3>
-//   `
-//   profile.innerHTML=
-
-// }
-
 // show nav links when the hamburger menu is clicked
 
 menuBtn.addEventListener('click', (e) =>{
@@ -202,18 +189,3 @@ menuBtn.addEventListener('click', (e) =>{
 
 
 
-document.onreadystatechange = function() {
-  if (document.readyState !== "complete") {
-      document.querySelector(
-        "main").style.visibility = "hidden";
-      document.querySelector(
-        "#loader").style.visibility = "visible";
-  } else {
-      document.querySelector(
-        "#loader").style.display = "none";
-      document.querySelector(
-        "main").style.visibility = "visible";
-  }
-};
-
-const loader
