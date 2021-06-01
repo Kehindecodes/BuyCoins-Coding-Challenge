@@ -11,7 +11,7 @@ const main = document.querySelector('main')
 
 let userInput = 'kehindecodes';
 
-
+console.log(GITHUB_API_KEY)
 // search github when the enter key is pressed
 
 const getUser = async (user) => {
@@ -75,8 +75,8 @@ const getUser = async (user) => {
 		},
 	});
 	const output = await response.json();
+console.log(output)
 
- console.log(output)
   if (output.data.user === null) {
       main.innerHTML=`
         <div class="errorMessage">
