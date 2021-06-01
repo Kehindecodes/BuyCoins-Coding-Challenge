@@ -1,5 +1,0 @@
- 
-const GITHUB_API_KEY = "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"
-
-
-
