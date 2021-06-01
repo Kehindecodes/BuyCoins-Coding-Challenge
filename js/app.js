@@ -1,4 +1,4 @@
-import GITHUB_API_KEY from "./apiKey.js"
+
 // Variables
 const profile = document.querySelector('#profile_details');
 const repositories = document.querySelector('#respositories');
@@ -10,7 +10,7 @@ const navLinks = document.querySelector('.right')
 const main = document.querySelector('main')
 
 let userInput = 'kehindecodes';
-
+console.log(GITHUB_API_KEY)
 
 
 // search github when the enter key is pressed
@@ -63,7 +63,7 @@ const getUser = async (user) => {
 	});
 
  
-  console.log(apiKey.token)
+ 
   // fetch data from API
  
 	const response = await fetch('https://api.github.com/graphql', {
