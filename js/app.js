@@ -72,7 +72,7 @@ const getUser = async (user) => {
 		headers: {
 			'Content-Type': 'application/json',
 			'Content-Length': data.length,
-			"Authorization": `Bearer ${apiKey.token}`,
+			"Authorization": `Bearer ${GITHUB_API_KEY}`,
 		},
 	});
 	const output = await response.json();
