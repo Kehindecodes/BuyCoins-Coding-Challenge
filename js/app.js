@@ -10,7 +10,6 @@ const navLinks = document.querySelector('.right')
 const main = document.querySelector('main')
 
 let userInput = 'kehindecodes';
-console.log(GITHUB_API_KEY)
 
 
 // search github when the enter key is pressed
