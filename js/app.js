@@ -87,7 +87,8 @@ console.log(output)
         </div>
       `
       
-  }else{
+  }
+  else{
     ShowRepo(output.data.user.repositories.edges);
     showProfile(output.data.user);
   }
